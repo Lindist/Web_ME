@@ -1,0 +1,249 @@
+.content2{
+    text-align: center;
+    letter-spacing: 2px;
+}
+
+.content2 .work_tech{
+    display: flex;
+    margin-top: 28px;
+    justify-content: space-around;
+}
+
+.content2 .work_tech h2{
+    font-weight: 300;
+    font-size: 20px;
+}
+
+.content2 .work_tech .container_technology{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
+    margin-top: 58px;
+}
+
+.content2 .work_tech .container_technology .progress-container{
+    width: 100%;
+    background-color: #eee;
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    height: 25px;
+    line-height: 28px;
+    color: #000;
+    transition: all 1s ease-in-out;
+}
+
+.content2 .work_tech .container_technology .progress-bar{
+    height: 100%;
+    position: absolute;
+    background-color: #3E7B27;
+    text-align: center;
+    overflow: hidden;
+    color: white;
+    line-height: 1.6;
+    transition: all 1s ease-in-out;
+}
+
+.content2 .work_tech .container_technology .progressing-bar{
+    width: 0%;
+}
+
+.success_progress{
+    width: 100%;
+}
+
+.content2 .work_tech .container_technology canvas{ 
+    width: 7rem;
+    transition: all 1s ease-in-out;
+}
+
+.content2 .work_tech .container_technology:hover canvas{
+    filter: none;
+}
+
+.grayscale{
+    filter: grayscale(100%);
+}
+
+#resume{
+    background-image: url("img/laptopWall.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: rgb(0, 0, 0);
+    width: 100%;
+}
+
+#overlay {
+    backdrop-filter: blur(4px);
+    width: inherit;
+    padding: 80px 0px;
+    background: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%) fixed;
+}
+
+.container_resume{
+    min-height: 1px;
+    height: 120px;
+    position: relative;
+}
+
+#check_resumeMe {
+    text-decoration: none;
+    padding: 15px;
+    width: 200px;
+    background: #309898;
+    color: white;
+    border: none;
+    border-radius: 32px;
+    font-size: 1.2rem;
+    font-weight: 100;
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+    overflow: hidden;
+}
+
+#check_resumeMe:hover {
+    color: black;
+    font-weight: 500;
+}
+
+#check_resumeMe:after {
+    content: "";
+    background: white;
+    position: absolute;
+    z-index: -1;
+    left: -20%;
+    right: -20%;
+    top: 0;
+    bottom: 0;
+    transform: skewX(-45deg) scale(0, 1);
+    transition: all 0.5s;
+}
+
+#check_resumeMe:hover:after {
+    transform: skewX(-45deg)  scale(1, 1);
+    -webkit-transition: all 0.5s;
+    transition: all 0.5s;
+}
+#achivements{
+    margin: 40px 90px 20px;
+}
+
+.achivement{
+    width: clamp(5em,calc(80vw - 1em),30em);
+    height: clamp(8em,calc(19vw - 1em),20em);
+    background: rgba(0, 0, 0,0.5) url(img/DisabledMen.png) center/100% 100% no-repeat padding-box padding-box;
+}
+
+.achivement_hover{
+    width: inherit;
+    height: inherit;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    place-items: end center;
+    overflow: hidden;
+    transition: all 0.65s;
+}
+
+.achivement_hover:hover{
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: -12px -12px 1.2em rgba(0, 0, 0, 0.85) inset
+    ,12px 12px 1.2em rgba(0, 0, 0, 0.85) inset;
+}
+
+.title_webs{
+    padding: 1.2em;
+    background-color: #0C0950;
+    width: inherit;
+    opacity: 0;
+    position: relative;
+    transform: translateY(100%);
+    transition: all 0.65s;
+}
+
+.sreach_webs{
+    position: relative;
+    transform: translateY(-300%);
+    opacity: 0;
+    transition: all 0.65s;
+}
+
+.achivement_hover:hover .title_webs{
+    transform: translateY(0%);
+    opacity: 1;
+    box-shadow: -12px -12px 1.2em rgba(0, 0, 0, 0.85) inset,
+    12px 0 1.2em rgba(0, 0, 0, 0.85) inset;
+}
+
+.achivement_hover:hover .sreach_webs{
+    transform: translateY(0%);
+    opacity: 1;
+}
+
+.detail_achivement{
+    display: none;
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 100;
+}
+
+.modal-content-achivement{
+    border-radius: 8px;
+    width: max(35vw,40rem);
+    background: #eeeeee;
+    padding: 5em;
+    box-shadow: 0px 0px 120px rgba(0, 0, 0, 1);
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    position: relative;
+}
+
+.modal-content-achivement ion-icon{
+    font-size: 2.5em;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 1rem 1.2rem 0 0;
+    transition: color 0.3s;
+}
+
+.modal-content-achivement ion-icon:hover{
+    color: rgb(252, 39, 39);
+}
+
+.modal-content-achivement button{
+    font-size: 1.3em;
+    padding: 10px;
+    border: none;
+    outline: none;
+    background: #f4f0f0;
+    border-radius: var(--border-radius);
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0 1.2rem 1rem 0;
+    transition: background 0.4s, color 0.4s;
+}
+
+.modal-content-achivement button:hover{
+    background: rgb(252, 39, 39);
+    color: #eee;
+}
+
+.modal-content-achivement img{
+    aspect-ratio: 2/1;
+    object-fit: contain;
+}

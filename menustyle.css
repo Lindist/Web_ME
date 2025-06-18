@@ -1,0 +1,462 @@
+.open{
+    height: 100%;
+    border-bottom: 2px solid #ECDFCC;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1)
+    ,-4px -3px 10px 2px #0d0d0d;
+    background: #0d0d0d;
+}
+
+.contentActive{
+    opacity: 1;
+    visibility: visible;
+    animation: transX 300ms ease-in-out;
+}
+
+@keyframes transX {
+    from {opacity: 0; visibility: hidden; transform: translateX(-10%);}
+    to {opacity: 1; visibility: visible; transform: translateX(0%);}
+}
+
+#info_content:not(.contentActive){
+    opacity: 0;
+    visibility: hidden;
+    overflow: hidden;
+    width: 0;
+    height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+}
+
+/* btn-5 */
+
+.btn-5 {
+    --primary: #02A2F8;
+    --neutral-1: #f7f8f7;
+    --neutral-2: #e7e7e7;
+    --radius: 32px;
+    /* scale: 0.5; */
+    cursor: pointer;
+    border-radius: var(--radius);
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.3);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: all 0.3s ease;
+    min-width: 60px;
+    padding: 0 20px;
+    height: 50px;
+    font-family: "Galano Grotesque", Poppins, Montserrat, sans-serif;
+    font-style: normal;
+    font-size: 18px;
+    font-weight: 600;
+  }
+  .btn-5:hover {
+    transform: scale(1.02);
+  }
+  .btn-5:active {
+    transform: scale(1);
+  }
+  .btn-5:after {
+    content: "";
+    position: relative;
+    inset: 0;
+    border-radius: var(--radius);
+    background: #fff;
+    border: 2.5px solid transparent;
+    z-index: 0;
+    transition: all 0.4s ease;
+  }
+  .btn-5:hover::after {
+    transform: scale(1.05, 1.1);
+  }
+  .btn-5::before {
+    content: "";
+    inset: 7px 6px 6px 6px;
+    position: relative;
+    border-radius: 30px;
+    filter: blur(0.5px);
+    z-index: 2;
+  }
+  .btn-5 .state p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-5 .state .icon {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: scale(1.25);
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn-5 .state .icon svg {
+    overflow: visible;
+  }
+  
+  /* Outline */
+  .btn-5 .outline {
+    position: absolute;
+    border-radius: inherit;
+    overflow: hidden;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    inset: -2px -3.5px;
+  }
+  .btn-5 .outline::before {
+    content: "";
+    position: absolute;
+    inset: -100%;
+    background: conic-gradient(
+      from 180deg,
+      transparent 60%,
+      white 80%,
+      transparent 100%
+    );
+    animation: spin 2s linear infinite;
+    animation-play-state: paused;
+  }
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  .btn-5:hover .outline {
+    opacity: 1;
+  }
+  .btn-5:hover .outline::before {
+    animation-play-state: running;
+  }
+  
+  /* Letters */
+  .btn-5 .state p span {
+    display: block;
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards calc(var(--i) * 0.03s);
+  }
+  .btn-5:hover p span {
+    opacity: 1;
+    animation: wave 0.5s ease forwards calc(var(--i) * 0.02s);
+  }
+  .btn-5:focus p span {
+    opacity: 1;
+    animation: disapear 0.6s ease forwards calc(var(--i) * 0.03s);
+  }
+  @keyframes wave {
+    30% {
+      opacity: 1;
+      transform: translateY(4px) translateX(0) rotate(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-3px) translateX(0) rotate(0);
+      color: var(--primary);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(0) rotate(0);
+    }
+  }
+  @keyframes slideDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-20px) translateX(5px) rotate(-90deg);
+      color: var(--primary);
+      filter: blur(5px);
+    }
+    30% {
+      opacity: 1;
+      transform: translateY(4px) translateX(0) rotate(0);
+      filter: blur(0);
+    }
+    50% {
+      opacity: 1;
+      transform: translateY(-3px) translateX(0) rotate(0);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0) translateX(0) rotate(0);
+    }
+  }
+  @keyframes disapear {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      transform: translateX(5px) translateY(20px);
+      color: var(--primary);
+      filter: blur(5px);
+    }
+  }
+  
+  /* Plane */
+  .btn-5 .state--default .icon svg {
+    animation: land 0.6s ease forwards;
+  }
+  .btn-5:hover .state--default .icon {
+    transform: rotate(45deg) scale(1.25);
+  }
+  .btn-5:focus .state--default svg {
+    animation: takeOff 0.8s linear forwards;
+  }
+  .btn-5:focus .state--default .icon {
+    transform: rotate(0) scale(1.25);
+  }
+  @keyframes takeOff {
+    0% {
+      opacity: 1;
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(70px) rotate(45deg) scale(2);
+    }
+    100% {
+      opacity: 0;
+      transform: translateX(160px) rotate(45deg) scale(0);
+    }
+  }
+  @keyframes land {
+    0% {
+      transform: translateX(-60px) translateY(30px) rotate(-50deg) scale(2);
+      opacity: 0;
+      filter: blur(3px);
+    }
+    100% {
+      transform: translateX(0) translateY(0) rotate(0);
+      opacity: 1;
+      filter: blur(0);
+    }
+  }
+  
+  /* Contrail */
+  .btn-5 .state--default .icon:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    height: 2px;
+    width: 0;
+    left: -5px;
+    background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.5));
+  }
+  .btn-5:focus .state--default .icon:before {
+    animation: contrail 0.8s linear forwards;
+  }
+  @keyframes contrail {
+    0% {
+      width: 0;
+      opacity: 1;
+    }
+    8% {
+      width: 15px;
+    }
+    60% {
+      opacity: 0.7;
+      width: 40px;
+    }
+    100% {
+      opacity: 0;
+      width: 60px;
+    }
+  }
+  
+  /* States */
+  .btn-5 .state {
+    padding-left: 29px;
+    z-index: 2;
+    display: flex;
+    position: relative;
+  }
+  .btn-5 .state--default span:nth-child(4) {
+    margin-right: 5px;
+  }
+  .btn-5 .state--sent {
+    display: none;
+  }
+  .btn-5 .state--sent svg {
+    transform: scale(1.25);
+    margin-right: 8px;
+  }
+  .btn-5:focus .state--default {
+    position: absolute;
+  }
+  .btn-5:focus .state--sent {
+    display: flex;
+  }
+  .btn-5:focus .state--sent span {
+    opacity: 0;
+    animation: slideDown 0.8s ease forwards calc(var(--i) * 0.2s);
+  }
+  .btn-5:focus .state--sent .icon svg {
+    opacity: 0;
+    animation: popup 1.2s ease forwards 0.8s;
+  }
+  @keyframes popup {
+    0% {
+      opacity: 0;
+      transform: scale(4) rotate(-40deg);
+      color: var(--primary);
+      filter: blur(4px);
+    }
+    30% {
+      opacity: 1;
+      transform: scale(0.6);
+      filter: blur(1px);
+    }
+    50% {
+      opacity: 1;
+      transform: scale(1.2);
+      filter: blur(0);
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  @keyframes scaleup {
+    from{ transform: scale(0); }
+    to { transform: scale(1); }
+  }
+
+  @keyframes scaledown {
+    from{ transform: scale(1); }
+    to { transform: scale(0); }
+  }
+
+  .discord_{
+    display: none;
+    position: fixed; /* Stay in place */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    z-index: 100;
+  }
+
+  .modal-content{
+    border-radius: 8px;
+    width: min(25vw,25rem);
+    background: #222831;
+    padding: 5em;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.6)
+    ,-4px -4px 12px 4px #222831;
+  }
+
+  .modal-content .name_discord{
+    width: 100%;
+    text-align: center;
+    font-weight: 700;
+    font-size: 19px;
+    color: #f4f4f4;
+    line-height: 1;
+  }
+
+  .modal-content .name_discord::after{
+    content: "#";
+    display: inline-block;
+    margin-left: 15px;
+    background: #328E6E;
+    width: 15px;
+    height: 15px;
+    color: #000000;
+    padding: 6px 6px 6px 6px;
+    border-radius: 50%;
+    transition: text-decoration 0.5s ease;
+  }
+
+  .modal-content .name_discord:hover::after{
+    text-decoration: underline;
+  }
+
+  .modal-content .exit_discord{
+      background: #d51818;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      gap: 8px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.25s;
+  }
+  .copy_discord_name{
+      background: #1101c0;
+      font-size: 12px;
+      font-weight: 700;
+      color: #fff;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      padding: 8px 12px;
+      gap: 8px;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      transition: all 0.25s;
+  }
+
+  .copy_discord_name:active{
+    background: #060141;
+  }
+
+  .exit_discord:active{
+    background: #9e0000;
+  }
+
+.copy_discord_name:disabled{
+  background: #c1c1c1;
+  color: #000000;
+  cursor: not-allowed;
+}
+
+@keyframes roll_180_deg {
+   0%{
+    transform: rotate(360deg);
+   }
+   40%{
+    transform: rotate(0deg);
+   }
+   70%{
+    transform: rotate(-20deg);
+   }
+   100%{
+    transform: rotate(0deg);
+   }
+}
+
+.addName{
+  text-align: center;
+  color: #fff;
+  font-weight: 100;
+  font-size: 12px;
+}
+
+.addName::before,.addName::after{
+  content: " '' ";
+  font-size: small;
+  font-weight: 600;
+}

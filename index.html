@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" href="img/logo_website.png" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contentstyle.css">
+    <link rel="stylesheet" href="contentstyle2.css">
+    <link rel="stylesheet" href="menustyle.css">
+    <title>CatHoaWriteOntheCode</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="discord_">
+        <div class="modal-content">
+            <ion-icon name="logo-discord" style="font-size: 4rem; color: #ffffff; animation: roll_180_deg 2s ease-out;" aria-hidden="true" aria-label="Logo-discord"></ion-icon>
+            <p class="addName">My Discord Name For Add to Contract</p>
+            <p class="name_discord">kondeena</p>
+            <button type="button" onclick="copyToClipboard(this)" class="copy_discord_name" data-copy=".name_discord">
+                <ion-icon name="copy-outline" class="copy-icon"></ion-icon>
+                <span class="copy-label">Copy</span>
+            </button>
+            <button type="button" onclick="getExit()" class="exit_discord">Exit</button>
+        </div>
+    </div>
+    <div class="detail_achivement">
+        <div class="modal-content-achivement">
+            <ion-icon name="close-circle-outline"></ion-icon>
+            <h2 style="width: 100%; text-align: center; font-size: 2em; letter-spacing: 5px; font-weight: 600;">DBdisables</h2>
+            <h3 style="width: 100%; text-align: center; font-size: 0.5em; letter-spacing: 5px; font-weight: 400;">WEB DATABASE</h3>
+            <img src="img/DisabledMen.png" alt="" srcset="" width="100%">
+            <!-- <p></p> -->
+            <button type="button">Close</button>
+        </div>
+    </div>
+    <header>
+        <!-- <h1>CatHoaWriteOntheCode</h1> -->
+        <img id="logo_cat" src="img/logo_2.png" alt="">
+        <img id="logo_me" src="img/Me.png" alt="">
+    </header>
+    <nav>
+        <ul>
+            <!-- <div><li class="open"><a href="#">Home</a></li>
+            <div class="lines"></div>
+            </div> -->
+            <div><li class="open"><a href="#">About</a>
+            </li>
+            <div class="lines"></div>
+            </div>
+            <div><li><a href="#">Portfolio</a>
+                <ul>
+                    <li><a href="#">Experience</a></li>
+                    <li><a href="#">Project</a></li>
+                </ul>
+            </li>
+            <div class="lines"></div>
+            </div>
+            <div><li><a href="#">Blog</a>
+                <ul>
+                    <li><a href="#">Raspberry Pi PiCo</a></li>
+                    <li><a href="#">Arduino</a></li>
+                    <li><a href="#">Wesite</a></li>
+                    <li><a href="#">Game Development</a></li>
+                </ul>
+                </li>
+                <div class="lines"></div>
+            </div>
+            <!-- <div><li class=""><a href="#">Contact</a></li>
+                <div class="lines"></div>
+            </div> -->
+        </ul>
+    </nav>
+    <aside>
+        <div id="slice">
+            <div class="btn_topic" onclick="toggleSlice()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <legend class="shown">Navigation Menu
+            </legend>
+        </div>
+        <div id="shortcut" class="shown">
+            <div><a href="#" onclick="scrollToEaseInOut('#quote')">Quotation</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#about_me')">About Me</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#What_I_do')">What I do</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#Contact')">Contact</a></div>
+        </div>
+        <div id="shortcut" class="shown">
+            <div><a href="#" onclick="scrollToEaseInOut('#skills')">Experience</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#resume')">Resume</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#projects')">Projects</a></div>
+            <div><a href="#" onclick="scrollToEaseInOut('#Contact')">Contact</a></div>
+        </div>
+        <div id="shortcut" class="shown">
+            <div><a href="#quote" onclick="scrollToEaseInOut('#Contact')">Raspberry Pi Pico</a></div>
+            <div><a href="#about_me" onclick="scrollToEaseInOut('#Contact')">Arduino</a></div>
+            <div><a href="#What_I_do" onclick="scrollToEaseInOut('#Contact')">Website</a></div>
+            <div><a href="#What_I_do" onclick="scrollToEaseInOut('#Contact')">Game Development</a></div>
+            <div><a href="#Contact" onclick="scrollToEaseInOut('#Contact')">Contact</a></div>
+        </div>
+    </aside>
+    <main>
+        <div id="info_content" class="content1 contentActive">
+            <h1 id="quote" class="before">
+                Mistakes are proof that you are trying.
+            </h1>
+            <h2 class="typing">
+                <p><i>Never stop learning</i>, because life <b>never</b> stops teaching.</p>
+            </h2><br>
+            <h3 class="typing">
+                <p><ins>The <b>best way</b> to predict the future is to <b>create it</b>.</ins></p>
+            </h3><br>
+            <h3 class="typing">
+                <p><b>you know ?</b> Every problem is an opportunity for a <b>creative solution</b>.</p>
+            </h3>
+            <h2 id="coron" class="before">
+                <b>Turning ideas into reality</b>, one line of code at a time. <br>
+                <b>Innovation</b> is born from <b>curiosity</b> and <b>passion</b>. <br>
+                Coding is like painting, but <b>instead</b> of colors, we use <b>logic</b>.
+            </h2>
+            <h2 id="coron" class="before">
+                <b>Keep it simple</b>, but significant. <br>
+                <strong>Success</strong> is a journey, <strong>not</strong> a destination.
+            </h2>
+            <h4>
+                <p>
+                    <i>Dream big code bigger ,Create. Innovate. Inspire. ,Explore. Experiment. Evolve.</i>
+                </p>
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="about_me" class="bg_me">
+                <p>
+                    <h1 class="appearent">A Little Bit About Me</h1>
+                </p>
+                <p class="appearent">
+                    <img id="profile_me" src="img/Me_handsomeall_thetime.png" alt="hundsomeallthetime">
+                </p>
+                <p>
+                    <h2 class="appearent">Hi, I'm Napat Ngamkhum. Website and Database Developer and IOT.</h2>
+                </p>
+                <p class="appearent">
+                    If you want to see more look at that 
+                </p>
+                <p class="appearent">
+                    <button class="slicedown_me">
+                        <input type="checkbox" id="mycheck_me" style="display: none;">
+                        <label for="mycheck_me">
+                            <span></span>
+                            <span></span>
+                        </label>
+                    </button>
+                </p>
+                <div id="content_of_me">
+                    <p>
+                        Hi, again. I'm Four that my nickmame. I’m a developer passionate in everything about Software and IOT , I have experienced in made user interfaces that blend thoughtful design with robust engineering then I have some designed and develop is available thought I'm junior but I will try do the best.
+                    </p>
+                    <p>
+                        I write website and design web follow as client requirement
+                        I have been written program either website ,IOT equipment hardware as arduino
+                         MCU Raspberry Pi and Raspberry Pi as long as at a moment many month 
+                         I have some experience from CTN Phrae then Lerning in way write website 
+                         and database that three web for 5 month 
+                         I consider work an ongoing education, and I'm always looking for opportunities to work with those who are willing to share their knowledge as much as I want to learn.
+                         At the end of the day, my primary goal is to create something web follow as client requirement.
+                    </p>
+                    <p>
+                        Currently, I study at Phrae Technical College and I'm pursuing High Vocational Certificate. 1 Level Education year.
+                    </p>
+                    <div id="able_me">
+                        <h2>Self Proclamations</h2>
+                        <div id="alignment_able_me">
+                            <div>
+                                <img src="img/web-design.png" alt="web-design">
+                                <p>Web Design</p>
+                            </div>
+                            <div>
+                                <img src="img/database-storage.png" alt="database-storage">
+                                <p>Database</p>
+                            </div>
+                            <div>
+                                <img src="img/world-wide-web.png" alt="data">
+                                <p>Web Developer</p>
+                            </div>
+                            <div>
+                                <img src="img/iot.png" alt="iot">
+                                <p>IOT</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="What_I_do" class="appearent">
+                <h1>
+                    What I do
+                </h1>
+                <div class="alignment_What_I_do">
+                    <div>
+                        <h2>IOT</h2>
+                        <div class="spin">
+                            <i class='bx bxs-analyse bx-lg' style='color:#ffffff' ></i>
+                        </div>
+                        <p>
+                            I have studied how to work IOT System, either Raspberry Pi and Arduino or ESP. It has been time many month that I'm so confident.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Developer</h2>
+                        <div class="spin">
+                            <i class='bx bx-code-alt bx-lg' style='color:#ffffff'></i>
+                        </div>
+                        <p>
+                            I had had knowledge about of strong foundation in computer science, Before I had studied serious IOT Hardware. In currently I'm passionate about IOT and web development together database and I have interested a little in mobile app and game development. As I grow as a Junoir Developer, I hope to write extremely greater code and leveraged to create beautiful software.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Database</h2>
+                        <div class="spin">
+                            <i class='bx bxs-data bx-lg' style='color:#ffffff' ></i>
+                        </div>
+                        <p>
+                            I can design and development database for client get follow as requirement, help to use efficient and high safty.
+                        </p>
+                    </div>
+                    <div>
+                        <h2>Involvement</h2>
+                        <div class="spin">
+                            <i class='bx bxs-bulb bx-lg' style='color:#ffffff' ></i>
+                        </div>
+                        <p>
+                            At Phrae Technical College, I'm currently work innovation in IOT Position watch to maintenance and research for invent innovation with electronic accessories as well as made web development in moment train. I've been involved with also CTN Phrae firm.
+                        </p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+        <div id="info_content" class="content2">
+            <h1 id="skills" style="margin-bottom: 28px;">
+                Experience
+            </h1>
+            <p style="padding: 2rem;">I have been written program either website ,IOT equipment hardware as arduino MCU Raspberry Pi and Raspberry Pi as long as at a moment many month I have some experience from CTN Phrae then Lerning in way write website and database that three web for 5 month and I'm always eager to learn more in this fast paced industry.</p>
+            <div class="work_tech">
+                <div>
+                    <h2>technologies I've used with Project as:</h2>
+                    <div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        <div class="container_technology">
+                            <canvas class="grayscale" id="sourceImg"></canvas>
+                            <div class="progress-container">
+                                <p style="opacity: 0; display: block; width: 100%; position: absolute; transition: all 1s ease-in-out;">?</p>
+                                <div class="progress-bar progressing-bar" id="progressBar">0%</div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+                <div>
+                    <h2>
+                        Where I've Worked:
+                    </h2>
+                    <div>
+                        <img style="display: block; text-align: center; margin-top: 55px;" src="img/technicalP.png"  width="250px" />
+                        <img style="display: block; text-align: center; margin-top: 55px;" src="img/ctn.png" width="250px" />
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="resume">
+                <div id="overlay">
+                    <div class="container_resume">
+                        <h2 style="letter-spacing: 5px; font-weight: 200; font-size: 2rem;">Check out my résumé!</h2>
+                        <a id="check_resumeMe" href="Resume.html" target="_blank" rel="noopener noreferrer">Grab A Copy</a>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div id="projects">
+                <h2 style="letter-spacing: 5px; font-weight: 200; font-size: 2rem;">What I've Done</h2>
+                <h5 style="letter-spacing: 5px; font-weight: 200;">(more coming soon)</h5>
+
+                <div id="achivements">
+                    <div class="achivement">
+                        <div class="achivement_hover">
+                            <ion-icon name="search-circle-sharp" class="sreach_webs" style="font-size: 45px;"></ion-icon>
+                            <span class="title_webs">DBdisables</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div id="info_content">content 3</div>
+    </main>
+    <footer id="Contact">
+        <i id="telegram" class='bx bxl-telegram' style='color:#ffffff; font-size: 72px;' ></i>
+        <p class="contract_me">Contract Me, Though Telegram !!!</p>
+        <button class="btn-5" onclick="Send_to_telegram()">
+            <div class="outline"></div>
+            <div class="state state--default">
+              <div class="icon">
+                <svg
+                  width="1em"
+                  height="1em"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <g style="filter: url(#shadow)">
+                    <path
+                      d="M14.2199 21.63C13.0399 21.63 11.3699 20.8 10.0499 16.83L9.32988 14.67L7.16988 13.95C3.20988 12.63 2.37988 10.96 2.37988 9.78001C2.37988 8.61001 3.20988 6.93001 7.16988 5.60001L15.6599 2.77001C17.7799 2.06001 19.5499 2.27001 20.6399 3.35001C21.7299 4.43001 21.9399 6.21001 21.2299 8.33001L18.3999 16.82C17.0699 20.8 15.3999 21.63 14.2199 21.63ZM7.63988 7.03001C4.85988 7.96001 3.86988 9.06001 3.86988 9.78001C3.86988 10.5 4.85988 11.6 7.63988 12.52L10.1599 13.36C10.3799 13.43 10.5599 13.61 10.6299 13.83L11.4699 16.35C12.3899 19.13 13.4999 20.12 14.2199 20.12C14.9399 20.12 16.0399 19.13 16.9699 16.35L19.7999 7.86001C20.3099 6.32001 20.2199 5.06001 19.5699 4.41001C18.9199 3.76001 17.6599 3.68001 16.1299 4.19001L7.63988 7.03001Z"
+                      fill="currentColor"
+                    ></path>
+                    <path
+                      d="M10.11 14.4C9.92005 14.4 9.73005 14.33 9.58005 14.18C9.29005 13.89 9.29005 13.41 9.58005 13.12L13.16 9.53C13.45 9.24 13.93 9.24 14.22 9.53C14.51 9.82 14.51 10.3 14.22 10.59L10.64 14.18C10.5 14.33 10.3 14.4 10.11 14.4Z"
+                      fill="currentColor"
+                    ></path>
+                  </g>
+                  <defs>
+                    <filter id="shadow">
+                      <fedropshadow
+                        dx="0"
+                        dy="1"
+                        stdDeviation="0.6"
+                        flood-opacity="0.5"
+                      ></fedropshadow>
+                    </filter>
+                  </defs>
+                </svg>
+              </div>
+              <p>
+                <span style="--i: 0">S</span>
+                <span style="--i: 1">e</span>
+                <span style="--i: 2">n</span>
+                <span style="--i: 3">d</span>
+              </p>
+            </div>
+            <div class="state state--sent">
+              <div class="icon">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  height="1em"
+                  width="1em"
+                  stroke-width="0.5px"
+                  stroke="black"
+                >
+                  <g style="filter: url(#shadow)">
+                    <path
+                      fill="currentColor"
+                      d="M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z"
+                    ></path>
+                    <path
+                      fill="currentColor"
+                      d="M10.5795 15.5801C10.3795 15.5801 10.1895 15.5001 10.0495 15.3601L7.21945 12.5301C6.92945 12.2401 6.92945 11.7601 7.21945 11.4701C7.50945 11.1801 7.98945 11.1801 8.27945 11.4701L10.5795 13.7701L15.7195 8.6301C16.0095 8.3401 16.4895 8.3401 16.7795 8.6301C17.0695 8.9201 17.0695 9.4001 16.7795 9.6901L11.1095 15.3601C10.9695 15.5001 10.7795 15.5801 10.5795 15.5801Z"
+                    ></path>
+                  </g>
+                </svg>
+              </div>
+              <p>
+                <span style="--i: 5">S</span>
+                <span style="--i: 6">e</span>
+                <span style="--i: 7">n</span>
+                <span style="--i: 8">t</span>
+              </p>
+            </div>
+        </button>
+        <p style="margin: 25px 0;">if you have an idea for a project or just want to chat, feel free to send me an Telegram!</p>
+        <p>OR</p>
+
+        <div>
+            <a href="https://www.facebook.com/n.phathr.ngam.kha" target="_blank"><span><i class='bx bxl-facebook bx-md'></i></span></a>
+            <a href="https://x.com/Cathoal" target="_blank"><span><img src="img/X-Logo.png" alt="X" style="width: 25px;"></span></a>
+            <a href="https://github.com/Lindist" target="_blank"><span><i class='bx bxl-github bx-md'></i></span></a>
+            <a href="https://www.instagram.com/four181049/" target="_blank"><span><i class='bx bxl-instagram-alt bx-md'></i></span></a>
+            <a onclick="getShare()" href="#"><span><i class='bx bxl-discord-alt bx-md'></i></span></a>
+            <a href="https://www.facebook.com/messages/t/100033898623614" target="_blank"><span><i class='bx bxl-messenger bx-md'></i></span></a>
+        </div>
+        <span>CatHoa Copyright © 2025 All Rights Reserved</span>
+    </footer>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+    <script type="text/javascript" src="canvas.js"></script>
+    <script type="text/javascript" src="scroll_smooth.js"></script>
+    <script type="text/javascript" src="cicker_ar.js"></script>
+</body>
+</html>
