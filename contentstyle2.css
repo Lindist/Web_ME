@@ -131,12 +131,15 @@
 }
 #achivements{
     margin: 40px 90px 20px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
 }
 
 .achivement{
     width: clamp(5em,calc(80vw - 1em),30em);
     height: clamp(8em,calc(19vw - 1em),20em);
-    background: rgba(0, 0, 0,0.5) url(img/DisabledMen.png) center/100% 100% no-repeat padding-box padding-box;
+    /* background: rgba(0, 0, 0,0.5) url(img/DisabledMen.png) center/100% 100% no-repeat padding-box padding-box; */
 }
 
 .achivement_hover{
