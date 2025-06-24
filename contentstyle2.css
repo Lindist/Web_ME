@@ -206,7 +206,7 @@
     background: #eeeeee;
     padding: 5em;
     box-shadow: 0px 0px 120px rgba(0, 0, 0, 1);
-    display: flex;
+    display: none;
     flex-wrap: wrap;
     align-content: center;
     justify-content: center;
