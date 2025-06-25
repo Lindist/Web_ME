@@ -213,6 +213,12 @@
     justify-content: center;
     gap: 10px;
     position: relative;
+    height: calc(100% - 5vh);
+}
+
+.scroll-achivement{
+    height: 150px;
+    overflow-y: auto;
 }
 
 .modal-content-achivement ion-icon{
