@@ -1,0 +1,17 @@
+.Blogger{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: max(25vh, 400px);
+    height: max(25vh, 400px);
+    left: 50%;
+    transform: translateX(-50%);
+    background-image: radial-gradient(circle,#332D56, #4E6688, #71C0BB, #e3eeb269);
+    color: #FBFBFB;
+    /* border: 1px solid #eeeeee80; */
+    color: #fff;
+    backdrop-filter: blur(6px);
+    border-radius: var(--border-radius);
+    /* padding: 10em; */
+}

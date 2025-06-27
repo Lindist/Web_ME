@@ -1,0 +1,10 @@
+@media (max-width: 768px) { 
+    body{
+        grid-template: "header" auto
+                       "menu" 50px
+                       "navigation" auto
+                       "content" 15fr
+                       "footer" auto / auto;
+    }
+    
+}
