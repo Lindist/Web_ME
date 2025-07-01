@@ -4,6 +4,21 @@ let aside = document.querySelector("aside");
 const shortcuts = document.querySelectorAll("aside > #shortcut");
 const lines = document.querySelectorAll(".lines");
 const h_s_lines = document.querySelectorAll("nav ul div > li");
+const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+function handleResponsiveChange(e,st_high = false) {
+  if (e.matches) {
+    if(st_high){
+        aside.style.height = 'calc(100% + 0px)';
+    }else{
+        aside.style.height = '50px';
+    }
+  } else {
+    // console.log('หน้าจอใหญ่');
+  }
+}
+
+mediaQuery.addEventListener('change', handleResponsiveChange);
 
 lines.forEach(
     (line,index) => {
@@ -16,8 +31,9 @@ lines.forEach(
         };
     }
 );
-
+let mediaQuery_count = 0;
 toggleSlice = () => {
+
     span.forEach(ele => {
         ele.classList.toggle('active')
     })
@@ -29,13 +45,19 @@ toggleSlice = () => {
     shortcuts.forEach(shortcut => {
         if(shortcut.classList.contains('shown')){
             shortcut.style.width = 'calc(100% - 50px)';
-            // shortcut.style.width = '100%';
         }
         else
         {
             shortcut.style.width = '100%';
         }
     })
+    if(mediaQuery_count > 0){
+        handleResponsiveChange(mediaQuery,true);
+        mediaQuery_count = 0;
+    }else{
+        handleResponsiveChange(mediaQuery);
+        mediaQuery_count++;
+    }
 }
 
 const click = document.querySelectorAll("nav ul div > li");
@@ -194,13 +216,13 @@ window.addEventListener('load', () => {
 
         if(shortcut.classList.contains('shown')){
             shortcut.style.width = 'calc(100% - 50px)';
-            // shortcut.style.width = '100%';
         }
         else
         {
             shortcut.style.width = '100%';
         }
     })
+    handleResponsiveChange(mediaQuery,true);
 });
 
 //Show Check Me

@@ -1,10 +1,37 @@
 @media (max-width: 768px) { 
     body{
         grid-template: "header" auto
-                       "menu" 50px
+                       "menu" 190px
                        "navigation" auto
                        "content" 15fr
                        "footer" auto / auto;
+        transition: all 500ms ease-in-out;
     }
-    
+    nav > ul{
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    nav > ul div{
+        width: 100%;
+        
+    }
+    nav ul li{
+        min-width: 100%;
+    }
+    .lines{
+        width: 0;
+    }
+
+    aside{
+        height: 50px;
+        top: 195px;
+        width: 100%;
+        padding: 0;
+        flex-wrap: nowrap;
+    }
+
+    .show{
+        width: 100%;
+    }
 }
