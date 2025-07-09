@@ -6,11 +6,42 @@ const lines = document.querySelectorAll(".lines");
 const h_s_lines = document.querySelectorAll("nav ul div > li");
 const mediaQuery = window.matchMedia('(max-width: 768px)');
 
+function getAsidehigh(){
+    return new Promise((resolve) => {
+        setTimeout(()=>{
+            resolve(aside.scrollHeight)
+        },10000)
+    })
+}
+
+// let stateAsidehigh = false, sizeAsidehigh = 0;
 function handleResponsiveChange(e,st_high = false) {
   if (e.matches) {
     if(st_high){
+        // if(!stateAsidehigh){
+        //     stateAsidehigh = true;
+        //     getAsidehigh().then(result=>{
+        //         sizeAsidehigh = result;
+        //         document.body.style.gridTemplate=`"header" auto
+        //                    "menu" 190px
+        //                    "navigation" ${result}px
+        //                    "content" 15fr
+        //                    "footer" auto / auto`;
+        //     })
+        // }else{
+        //     document.body.style.gridTemplate=`"header" auto
+        //                 "menu" 190px
+        //                 "navigation" ${sizeAsidehigh}px
+        //                 "content" 15fr
+        //                 "footer" auto / auto`;
+        // }
         aside.style.height = 'calc(100% + 0px)';
     }else{
+        // document.body.style.gridTemplate=`"header" auto
+        //                "menu" 190px
+        //                "navigation" 50px
+        //                "content" 15fr
+        //                "footer" auto / auto`;
         aside.style.height = '50px';
     }
   } else {
@@ -293,30 +324,34 @@ Send_to_telegram = () => {
 const discord = document.getElementsByClassName("discord_")[0];
 
 getHeightScroll = () => {
-    return new Promise((resolve, reject) => {
+    return new Promise((resolve) => {
         if(window.pageYOffset > 0)
         {
             resolve(window.pageYOffset);
         }
         else
         {
-            reject("fail;");
+            resolve(0);
         }
     })
 }
 
 getShare = async () => {
-    const height_scrolling = await getHeightScroll();
-    discord.firstElementChild.style.animation = "scaleup 0.5s ease";
-    discord.style.display = "flex";
-    discord.style.justifyContent = "center";
-    discord.style.alignItems = "center";
-    setTimeout(() => {
-        window.scrollBy({
-            top: height_scrolling,
-            behavior: 'smooth'
-        });
-    },500)
+    try{
+        const height_scrolling = await getHeightScroll();
+        discord.firstElementChild.style.animation = "scaleup 0.5s ease";
+        discord.style.display = "flex";
+        discord.style.justifyContent = "center";
+        discord.style.alignItems = "center";
+        setTimeout(() => {
+            window.scrollBy({
+                top: height_scrolling,
+                behavior: 'smooth'
+            });
+        },500)
+    }catch(err){
+        console.log(err);
+    }
 }
 
 getExit = () => {

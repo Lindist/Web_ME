@@ -145,7 +145,7 @@
     overflow: hidden;
     visibility: hidden;
     text-align: left;
-    width: min(40vw, 60em);
+    width: max(40vw, 35em);
     position: relative;
     transition: 0.5s ease-in-out;
 }

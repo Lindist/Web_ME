@@ -4,7 +4,12 @@
                        "menu" 190px
                        "navigation" auto
                        "content" 15fr
-                       "footer" auto / auto;
+                       "footer" auto / 100dvh;
+        grid-template: "header" auto
+                       "menu" 190px
+                       "navigation" auto
+                       "content" 15fr
+                       "footer" auto / 100vh;
         transition: all 500ms ease-in-out;
     }
     nav > ul{
@@ -33,5 +38,13 @@
 
     .show{
         width: 100%;
+    }
+
+    .content1 > h4 > p{
+        font-size: clamp(0.2rem ,calc(1rem - 1vw), 1.2rem);
+    }
+
+    .typing p{
+        font-size: 0.9rem;
     }
 }
