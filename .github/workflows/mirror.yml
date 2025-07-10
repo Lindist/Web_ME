@@ -23,7 +23,7 @@ jobs:
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
 
-          # ✅ ใช้ x-access-token เพื่อระบุว่าใช้ PAT
+         
           git remote add mirror https://x-access-token:${TOKEN}@github.com/Lindist/Lindist.github.io.git
 
           git push mirror HEAD:main --force
