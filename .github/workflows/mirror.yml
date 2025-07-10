@@ -1,25 +1,32 @@
 name: Sync to Mirror Repo
-
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
 
 jobs:
   sync:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout source repo
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Push to mirror repo
+      - name: Push to mirror
         env:
           TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          echo "TOKEN=${#TOKEN}"
-          git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          # (1) ยืนยันว่า token ถูกโหลดจริง
+          echo "Token length: ${#TOKEN}"
+          if [ -z "$TOKEN" ]; then
+            echo "::error::TOKEN is empty – check repository secret"
+            exit 1
+          fi
 
-          git remote add mirror https://$TOKEN@github.com/Lindist/Lindist.github.io.git
+          # (2) ตั้งค่า git
+          git config --global user.email "action@github.com"
+          git config --global user.name  "GitHub Action"
+
+          # (3) เพิ่ม remote พร้อม PAT รูปแบบที่ GitHub แนะนำ
+          git remote add mirror https://x-access-token:${TOKEN}@github.com/Lindist/Lindist.github.io.git
+
+          # (4) Push
           git push mirror HEAD:main --force
