@@ -14,19 +14,16 @@ jobs:
         env:
           TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          # (1) ยืนยันว่า token ถูกโหลดจริง
           echo "Token length: ${#TOKEN}"
           if [ -z "$TOKEN" ]; then
             echo "::error::TOKEN is empty – check repository secret"
             exit 1
           fi
 
-          # (2) ตั้งค่า git
           git config --global user.email "action@github.com"
-          git config --global user.name  "GitHub Action"
+          git config --global user.name "GitHub Action"
 
-          # (3) เพิ่ม remote พร้อม PAT รูปแบบที่ GitHub แนะนำ
+          # ✅ ใช้ x-access-token เพื่อระบุว่าใช้ PAT
           git remote add mirror https://x-access-token:${TOKEN}@github.com/Lindist/Lindist.github.io.git
 
-          # (4) Push
           git push mirror HEAD:main --force
