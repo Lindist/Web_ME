@@ -350,7 +350,7 @@
 
   .modal-content{
     border-radius: 8px;
-    width: min(25vw,25rem);
+    width: max(25vw,25rem);
     background: #222831;
     padding: 5em;
     display: flex;

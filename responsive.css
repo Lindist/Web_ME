@@ -47,4 +47,18 @@
     .typing p{
         font-size: 0.9rem;
     }
+
+    .spin{
+        width: 130px;
+        height: 130px;
+    }
+
+    footer .contract_me{
+        font-size: 1.6rem;
+    }
+
+    .modal-content-achivement{
+        height: calc(100% - 80dvh);
+        height: calc(100% - 80vh);
+    }
 }
