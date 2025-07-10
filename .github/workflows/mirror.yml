@@ -19,6 +19,7 @@ jobs:
         run: |
           git config --global user.email "action@github.com"
           git config --global user.name "GitHub Action"
+          echo "TOKEN=${#TOKEN}"
 
           git remote add mirror https://$TOKEN@github.com/Lindist/Lindist.github.io.git
           git push mirror HEAD:main --force
