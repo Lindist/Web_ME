@@ -380,4 +380,4 @@ function copyToClipboard(button) {
       .catch(err => {
         alert("Fail at: " + err);
       });
-}
+} 
