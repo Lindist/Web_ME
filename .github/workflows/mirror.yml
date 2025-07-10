@@ -1,0 +1,22 @@
+name: Sync to Mirror Repo
+
+on:
+  push:
+    branches:
+      - main 
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout source repo
+        uses: actions/checkout@v3
+
+      - name: Push to mirror repo
+        run: |
+          git config --global user.email "action@github.com"
+          git config --global user.name "GitHub Action"
+
+          git remote add mirror https://$MIRROR_TOKEN@github.com/Lindist/Cathoa.github.io.git
+          git push mirror HEAD:main --force
