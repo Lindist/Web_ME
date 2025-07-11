@@ -26,4 +26,6 @@ jobs:
          
           git remote add mirror https://x-access-token:${TOKEN}@github.com/Lindist/Lindist.github.io.git
 
+          # เช็คว่า remote ใช้อะไรจริง
+          git remote -v
           git push mirror HEAD:main --force
