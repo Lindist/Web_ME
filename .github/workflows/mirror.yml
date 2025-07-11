@@ -14,18 +14,8 @@ jobs:
         env:
           TOKEN: ${{ secrets.MIRROR_TOKEN }}
         run: |
-          echo "Token length: ${#TOKEN}"
-          if [ -z "$TOKEN" ]; then
-            echo "::error::TOKEN is empty – check repository secret"
-            exit 1
-          fi
-
           git config --global user.email "action@github.com"
-          git config --global user.name "GitHub Action"
+          git config --global user.name  "GitHub Action"
 
-         
           git remote add mirror https://x-access-token:${TOKEN}@github.com/Lindist/Lindist.github.io.git
-
-          # เช็คว่า remote ใช้อะไรจริง
-          git remote -v
           git push mirror HEAD:main --force
