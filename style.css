@@ -44,6 +44,7 @@ header{
     border-radius: var(--border-radius);
     border: 1px solid #eeeeee80;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     grid-area: header;
     display: flex;
     justify-content: space-between;
@@ -67,6 +68,7 @@ nav{
     border: 1px solid #eeeeee80;
     border-radius: var(--border-radius);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     grid-area: menu;
     z-index: 11;
 }
@@ -171,6 +173,7 @@ main{
     border: 1px solid #eeeeee80;
     color: #fff;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     grid-area: content;
     border-radius: var(--border-radius);
     padding: var(--padding-content) 0px;
@@ -187,6 +190,7 @@ aside{
     background: #FFEDFA0D;
     border: 1px solid #eeeeee80;
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     display: flex;
     align-self: start;
     flex-direction: column;
@@ -327,6 +331,7 @@ footer{
     border: 1px solid #eeeeee80;
     border-radius: var(--border-radius);
     backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
     grid-area: footer;
     display: flex;
     flex-direction: column;
@@ -395,6 +400,7 @@ footer div a:nth-child(5):hover{
 footer div a:nth-child(6):hover{
     background-image: linear-gradient(200deg,#FE7743,#C95792,#3D365C,#211C84,#3A59D1);
     background-clip: text;
+    -webkit-background-clip: text;
     color: transparent;
 }
 

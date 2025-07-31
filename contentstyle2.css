@@ -76,6 +76,7 @@
 
 #overlay {
     backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     width: inherit;
     padding: 80px 0px;
     background: linear-gradient(rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.73) 17%, rgba(0, 0, 0, 0.66) 35%, rgba(0, 0, 0, 0.55) 62%, rgba(0, 0, 0, 0.4) 100%) fixed;
